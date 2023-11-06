@@ -743,7 +743,7 @@ class GoogleDriveUtilities(Serializable, BaseModel):
         if api_file:
             with io.open(api_file, "r", encoding="utf-8-sig") as json_file:
                 data = json.load(json_file)
-            if "installed" in data:
+            if "installed" in data or "web" in data:
                 credentials_path = api_file
                 service_account_key = None
             else:
